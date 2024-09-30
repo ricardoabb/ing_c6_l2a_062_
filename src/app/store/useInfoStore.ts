@@ -1,11 +1,17 @@
 import { create } from "zustand";
-
+const contentStart = {
+  title : 'Língua Inglesa',
+  meaning: "phrasal verbs in the context of health and well-being",
+  content: "Os phrasal verbs são estruturas comuns na língua inglesa.\n\n Ao ler um texto, ouvir uma música, ser influenciado por uma propaganda – eles estarão lá! Isso não é diferente quando falamos do tema saúde.\nPara se expressar sobre dores, sintomas, problemas, e até mesmo dizer como se sente, você pode usar uma série de estruturas verbais que trarão, para o seu inglês, naturalidade.\n\nImagine se você estivesse em outro país que o idioma fosse a língua inglesa, como seria sua comunicação? Por isso, aqui você vai conhecer alguns desses phrasal verbs associados à temática da saúde.",
+}
 
 interface ModalState {
+  activeId: number
+  imageActive: boolean
   isOpen: boolean;
   isAnimated: boolean;
   isPlaying: boolean;
-  isMuted: boolean;
+  isTranslated: boolean;
   title: string;
   meaning: string;
   content: string;
@@ -18,22 +24,28 @@ interface ModalState {
   }) => void;
   closeModal: () => void;
   setOpen: () => void;
-  setIsPlaying: (param: {
-    isPlaying: boolean
+  setActiveId: (param: {
+    activeId: number
   }) => void;
-  setIsMuted: (param: {
-    isMuted: boolean
+  setImageActive: (param: {
+    imageActive: boolean
+  }) => void;
+  setIsTranslated: (param: {
+    isTranslated: boolean
   }) => void;
 }
 
 export const useInfoStore = create<ModalState>((set) => ({
+  activeId: 0,
+  imageActive: false,
   isOpen: false,
+  
   isAnimated: false,
   isPlaying: false,
-  isMuted: false,
-  title: "",
-  meaning: "",
-  content: "",
+  isTranslated: false,
+  title: contentStart.title,
+  meaning: contentStart.meaning,
+  content: contentStart.content,
 
   openModal: ({ title, meaning, content }) =>
     set({
@@ -52,6 +64,7 @@ export const useInfoStore = create<ModalState>((set) => ({
       content: "",
     }),
   setOpen: () => set((state) => ({ isOpen: !state.isOpen, isAnimated: false })),
-  setIsPlaying: ({ isPlaying }) => set({ isPlaying, }),
-  setIsMuted: ({ isMuted }) => set({ isMuted, }),
+  setActiveId: ({ activeId }) => set({ activeId, }),
+  setImageActive: ({ imageActive }) => set({ imageActive, }),
+  setIsTranslated: ({ isTranslated }) => set({ isTranslated, }),
 }));

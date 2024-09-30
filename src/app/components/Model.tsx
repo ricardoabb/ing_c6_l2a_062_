@@ -4,6 +4,8 @@ import { useEffect, useRef } from "react";
 import { Group } from 'three';
 import { useInfoStore } from "../store/useInfoStore";
 
+import { ThreeEvent } from "@react-three/fiber";
+
 
 
 export default function Model() {
@@ -27,8 +29,7 @@ export default function Model() {
     if(node.children){
       node.castShadow = true;
     }
-  })
-
+  }) 
   
   
 
@@ -41,10 +42,10 @@ export default function Model() {
   // plane.receiveShadow = true;
   // plane.position.setY(-3)
   // scene.add(plane);
-
-
   
-
+  
+  
+  
   useEffect(() => {
     //@ts-ignore
     
@@ -56,7 +57,7 @@ export default function Model() {
 
   return (
     <group ref={group}>
-      <primitive object={scene} />
+      <primitive  object={scene} />
     </group>
   );
 }

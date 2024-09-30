@@ -9,7 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
-          'modal': "url('/bg-pattern.png')",
+          'hospital': "url('/bg-hospital.webp')",
       },
       screens: {
         'mb': '400px',
