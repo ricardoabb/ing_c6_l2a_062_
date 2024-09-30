@@ -90,7 +90,7 @@ export function TextBox() {
             <div id="container" className={`relative flex flex-wrap justify-center items-center 
             ${content ? 'opacity-100' : 'opacity-0'}
             ${activeIndex <= 0 || activeIndex === isLast ? 'w-[100vh] md:w-screen h-[100vh] rounded-none border-none' : 'w-[80vh] md:w-[100vh] h-[80vh] md:h-[100vh] rounded-full'}
-            mx-auto 
+            mx-auto mb-[200px] md:mb-0
             
             bg-white bg-opacity-0 backdrop-blur-[10px] border-[#E5985E] border-[1px]
             transition-all ease-in-out duration-[.3s] `}>
@@ -132,7 +132,7 @@ export function TextBox() {
                                     </div>
                                     {imageActive && (
                                         <>
-                                            <div className=" absolute select-none mx-auto w-[900px] h-[900px] bg-white bg-opacity-0 backdrop-blur-[10px] overflow-hidden rounded-3xl z-[60]">
+                                            <div className=" absolute select-none mx-auto w-[576px] h-[576px] md:w-[900px] md:h-[900px] bg-white bg-opacity-0 backdrop-blur-[10px] overflow-hidden rounded-3xl z-[60]">
                                                 <Image
                                                     src={item.image!}
                                                     alt=""
