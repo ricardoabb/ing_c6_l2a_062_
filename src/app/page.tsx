@@ -29,7 +29,7 @@ export default function Home() {
 
   return (
     <main className="flex relative overflow-hidden flex-col justify-center   items-center w-screen h-screen">
-      <meta name="mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-capable" content="yes" />
       <section className="
       relative flex justify-center items-center overflow-hidden
        bg-hospital bg-cover bg-no-repeat bg-transparent bg-bottom w-screen h-screen

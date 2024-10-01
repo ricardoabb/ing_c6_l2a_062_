@@ -163,11 +163,9 @@ export function TextBox() {
                             </SwiperSlide>
                         )
                     })}
-                </Swiper>
-
-                <div className={`absolute ${imageActive ? 'opacity-0 z-1' : 'opacity-100 z-20'}
-            ${activeIndex <= 0 || activeIndex === isLast ? 'bottom-[150px] md:bottom-[80px]' : 'bottom-[50px] md:bottom-[80px]'}
-             flex items-center justify-around mt-12 mb-28  w-[350px] md:w-[750px] h-[133px] mx-auto transition-all ease-in-out duration-[.3s]`}>
+                <div className={`absolute ${imageActive ? 'opacity-0 z-1' : 'opacity-100 z-[20]  m-auto left-0 right-0'}
+            ${activeIndex <= 0 || activeIndex === isLast ? 'bottom-[0] md:bottom-[80px]' : 'bottom-[0] md:bottom-[80px]'}
+             flex items-center justify-around mt-12 mb-4 w-[350px] md:w-[750px] h-[133px] mx-auto transition-all ease-in-out duration-[.3s]`}>
 
                     <button className={`${sliderRef.current?.swiper.activeIndex == 0 ? "bg-opacity-[.5]" : "opacity-100"} scale-x-[-1] flex justify-center items-center w-14 h-14 bg-[#fff] rounded-full`}
                         //ref={prevRef}
@@ -200,10 +198,8 @@ export function TextBox() {
                             </svg>
                         </div>
                     </button>
-
-                    {
-
-                    }{activeIndex <= 0  ? ( 
+{/* 
+                    {activeIndex <= 0  ? ( 
 
                     <div className='absolute flex gap-8 bottom-[80px] md:bottom-[116px]  md:left-[130px]  '>
                         <a id='btn-translate' onClick={() => setIsTranslated({ isTranslated: !isTranslated })} className=' cursor-pointer'>
@@ -214,11 +210,11 @@ export function TextBox() {
                         </a>
                     </div>
                     ) : null
-                    }
+                    } */}
                 </div>
+                </Swiper>
 
-                <ThreeScene />
-                {/* fazer aparecer somente no primeiro e últimos slide  */}
+                {/* <ThreeScene /> */}                
             </div>
 
 
