@@ -11,7 +11,7 @@ import { Navigation, A11y } from 'swiper/modules';
 import { register, SwiperContainer } from "swiper/element/bundle";
 register();
 
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
 import SwiperClass from 'swiper'
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -85,6 +85,16 @@ export function TextBox() {
     };
 
 
+    const setSwiperIndex = (index: number) => {
+        
+        // on click
+    }
+    
+    const handleOnSetSwiper = (index: number) => {
+        //const swiper = useSwiper()
+      sliderRef.current?.swiper.slideTo(index)
+    }
+
     return (
         <>
             <div id="container" className={`relative flex flex-wrap justify-center items-center 
@@ -124,7 +134,7 @@ export function TextBox() {
                                             {/* <span className=' text-[#fff] font-medium text-[20px] '>{item.meaning}</span> */}
                                         </div>
                                     </div>
-
+                                    <button onClick={() => handleOnSetSwiper(4)}>Go to first slide</button>
                                     <div id="box-container" className={` from-sand-300 to-sand-100 rounded-2xl  shadow-solid mt-[1rem] z-[20]`}>
                                         <div className={`relative text-white text-xl text-sand-500 `}>
                                             <AnimatedText text={item.content} textPt={item.translation.content} limit={activeIndex === 0 ? 250 : 150} />
@@ -213,9 +223,14 @@ export function TextBox() {
                     } */}
                 </div>
                 </Swiper>
+                
+
+                
+
 
                 {/* <ThreeScene /> */}                
             </div>
+                <Menu sliderRef={sliderRef} />
 
 
 

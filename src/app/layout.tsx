@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-
+      <meta name="apple-mobile-web-app-capable" content="yes" />
       <body className={montserrat.className}>{children}</body>
     </html>
   );

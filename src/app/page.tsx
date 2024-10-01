@@ -28,7 +28,7 @@ export default function Home() {
 
 
   return (
-    <main className="flex relative overflow-hidden flex-col justify-center   items-center w-screen h-screen">
+    <main className="flex relative overflow-hidden flex-col justify-center   items-center ">
       <meta name="apple-mobile-web-app-capable" content="yes" />
       <section className="
       relative flex justify-center items-center overflow-hidden
@@ -38,7 +38,7 @@ export default function Home() {
         <TextBox />
         {/* <ThreeScene /> */}
       </section>
-      <Menu />
+      {/* <Menu /> */}
 
     </main>
   );
