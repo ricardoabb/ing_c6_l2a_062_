@@ -55,7 +55,7 @@ export function Menu({ title = "Phrasal Verbs relating to Health", meaning = "",
 
     return (
 
-        <div className={`fixed  bottom-[20px]  rounded-none  lg:rounded-t-[80px] w-full lg:w-[750px] pt-4 pb-4  mx-auto bg-opacity-60 z-50 transition-all ease-in-out duration-[.3s]`}>
+        <div className={`fixed  bottom-[20px]  rounded-none  lg:rounded-t-[80px] w-full sm:w-[650px] pt-4 pb-4  mx-auto bg-opacity-60 z-50 transition-all ease-in-out duration-[.3s]`}>
         <ul className='w-full flex flex-wrap gap-5 lg:gap-10 justify-center items-center  ' >
           {card.map((item, index) => (            
             <li id={`target${index + 1}`} key={index} className="my-0  p-1 md:p-2 bg-[#fff] bg-opacity-50 backdrop-blur-[20px] rounded-full ">
