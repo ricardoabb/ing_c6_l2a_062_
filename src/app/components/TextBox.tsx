@@ -49,7 +49,7 @@ export function TextBox() {
     const { isOpen, setOpen } = useInfoStore();
     const [text, setText] = useState('');
     const [activeIndex, setActiveIndex] = useState(0);
-    const { content, imageActive, isTranslated, setIsTranslated, setImageActive, setActiveId } = useInfoStore();
+    const { content, imageActive, isTranslated, setIsTranslated, setImageActive, setActiveId,  } = useInfoStore();
 
     const sliderRef: any = useRef<SwiperClass>()
     const prevRef = useRef(null);
@@ -69,6 +69,7 @@ export function TextBox() {
         // setModal({ image1: `${card[swiper.activeIndex].image}`, title: `${card[swiper.activeIndex].title}`, subtitle: `${card[swiper.activeIndex].subtitle}` });
         setActiveId({ activeId: swiper.activeIndex });
         setImageActive({ imageActive: false })
+        setIsTranslated({ isTranslated: false })
     };
 
     const handleImageLoad = () => {
@@ -133,11 +134,10 @@ export function TextBox() {
                                             <h1 className={`font-handlee text-[#fff] uppercase font-bold mb-2 text-[2rem] md:text-[2.5rem] text-center md:mb-5 leading-9 md:leading-10 select-none`}>{item.title}</h1>
                                             {/* <span className=' text-[#fff] font-medium text-[20px] '>{item.meaning}</span> */}
                                         </div>
-                                    </div>
-                                    <button onClick={() => handleOnSetSwiper(4)}>Go to first slide</button>
+                                    </div>                                    
                                     <div id="box-container" className={` from-sand-300 to-sand-100 rounded-2xl  shadow-solid mt-[1rem] z-[20]`}>
                                         <div className={`relative text-white text-xl text-sand-500 `}>
-                                            <AnimatedText text={item.content} textPt={item.translation.content} limit={activeIndex === 0 ? 200 : 150} />
+                                            <AnimatedText text={item.translation.content} textPt={item.content} limit={activeIndex === 0 ? 200 : 150} />
                                         </div>
                                     </div>
                                     {imageActive && (
