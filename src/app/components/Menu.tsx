@@ -56,10 +56,10 @@ export function Menu({ title = "Phrasal Verbs relating to Health", meaning = "",
     return (
 
         <div className={`fixed  bottom-[20px]  rounded-none  lg:rounded-t-[80px] w-full sm:w-[650px] pt-4 pb-4  mx-auto bg-opacity-60 z-50 transition-all ease-in-out duration-[.3s]`}>
-        <ul className='w-full flex flex-wrap gap-5 lg:gap-10 justify-center items-center  ' >
+        <ul className='w-full flex flex-wrap gap-5 md:gap-x-7 md:gap-y-5 justify-center items-center  ' >
           {card.map((item, index) => (            
             <li id={`target${index + 1}`} key={index} className="my-0  p-1 md:p-2 bg-[#fff] bg-opacity-50 backdrop-blur-[20px] rounded-full ">
-              <div className={`w-5 h-5 sm:w-8 sm:h-8 rounded-full cursor-pointer ${activeId === index ? "bg-[#FFF]" : menuColor } `} onClick={() => handleOnSetSwiper(index)}></div>
+              <div className={`w-5 h-5 sm:w-6 sm:h-6 rounded-full cursor-pointer ${activeId === index ? "bg-[#FFF]" : menuColor } `} onClick={() => handleOnSetSwiper(index)}></div>
             </li>          
           ))}  
         </ul>
